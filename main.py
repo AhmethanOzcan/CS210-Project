@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import crime_rates
 # Encoding for writing the page html files
 # Do not change unless you are getting a UnicodeEncodeError
 ENCODING = "utf-8"
@@ -49,6 +49,10 @@ def get_LineChartFromJSON(filename, x, y, title, valueName):
     # Show the plot
     plt.show()
 
+
+
 if __name__ == "__main__":
     get_USDTRY()
     get_LineChartFromJSON('usd-try.json', 'Date', 'Exchange Rate', 'USD to TRY Over Time', 'close')
+    crime_rates.crime_rate_plotter()
+    crime_rates.dolar_crime_plotter()
